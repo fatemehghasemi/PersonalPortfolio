@@ -23,7 +23,7 @@ public static class Profile
     public const string Phone = "+98 903 279 9523";
     public const string GitHubUrl = "https://github.com/fatemehghasemi";
     public const string LinkedInUrl = "https://www.linkedin.com/in/fatemehghasem1/";
-    public const string ResumePath = "files/resume.pdf";
+    public const string ResumePath = "files/Fatemeh-Ghasemi-Resume.pdf";
 
     public static readonly string[] Skills =
     [
@@ -34,12 +34,12 @@ public static class Profile
 
     public static readonly TimelineItem[] Timeline =
     [
-        new("Nov 2025 — Present", "Back End Developer · Hese Tazegi", "Remote, Tehran",
+        new("Nov 2025 — Present", "Senior Back End Developer · Hese Tazegi", "Remote, Tehran",
             "Scalable .NET Core services with DDD, Dapper, Elasticsearch and Redis.",
             "Designed scalable backend services with .NET Core following DDD. Used Dapper for efficient " +
             "data access, improved Elasticsearch search performance by ~50%, and integrated Redis caching " +
             "to cut response times and database load."),
-        new("Sep 2024 — Aug 2025", "Back End Developer · Mores Software", "Remote, Tehran",
+        new("Sep 2024 — Aug 2025", "Senior Back End Developer · Mores Software", "Remote, Tehran",
             "High-performance .NET Core backends with CQRS, AWS Lambda and Docker.",
             "Built high-performance backend systems with .NET Core and Dapper. Applied CQRS, integrated " +
             "AWS Lambda and Amazon S3, practiced TDD, and deployed with Docker."),
