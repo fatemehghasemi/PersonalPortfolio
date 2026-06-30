@@ -1,0 +1,60 @@
+@page "/about"
+
+<PageTitle>About — @Profile.Name</PageTitle>
+
+<section class="page-section">
+    <h1 class="section-title">About</h1>
+    <p class="lead-text">@Profile.AboutText</p>
+</section>
+
+<section class="page-section">
+    <h2 class="section-subtitle">Skills</h2>
+    <div class="skill-tags">
+        @foreach (var skill in Profile.Skills)
+        {
+            <span class="skill-tag">@skill</span>
+        }
+    </div>
+</section>
+
+<section class="page-section">
+    <h2 class="section-subtitle">Experience</h2>
+    <ul class="timeline">
+        @foreach (var item in Profile.Timeline)
+        {
+            <li class="timeline-item">
+                <span class="timeline-period">@item.Period · @item.Location</span>
+                <h3 class="timeline-title">@item.Title</h3>
+                <p class="timeline-desc">@item.Description</p>
+            </li>
+        }
+    </ul>
+</section>
+
+<section class="page-section">
+    <h2 class="section-subtitle">Education</h2>
+    <ul class="timeline">
+        @foreach (var edu in Profile.Education)
+        {
+            <li class="timeline-item">
+                <span class="timeline-period">@edu.Period</span>
+                <h3 class="timeline-title">@edu.Degree</h3>
+                <p class="timeline-desc">@edu.Institution</p>
+            </li>
+        }
+    </ul>
+</section>
+
+<section class="page-section">
+    <h2 class="section-subtitle">Honors &amp; Awards</h2>
+    <ul class="timeline">
+        @foreach (var award in Profile.Awards)
+        {
+            <li class="timeline-item">
+                <span class="timeline-period">@award.Date</span>
+                <h3 class="timeline-title">@award.Title</h3>
+                <p class="timeline-desc">@award.Issuer</p>
+            </li>
+        }
+    </ul>
+</section>
