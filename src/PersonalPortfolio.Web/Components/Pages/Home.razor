@@ -31,3 +31,23 @@
         </a>
     </div>
 </section>
+
+<section class="experience">
+    <div class="experience-head">
+        <h2 class="experience-title">Experience</h2>
+        <a class="experience-more" href="about">All experience &amp; details →</a>
+    </div>
+
+    <ul class="experience-list">
+        @foreach (var item in Profile.Timeline)
+        {
+            <li class="experience-item">
+                <span class="experience-period">@item.Period</span>
+                <div class="experience-body">
+                    <h3 class="experience-role">@item.Title</h3>
+                    <p class="experience-summary">@item.Summary</p>
+                </div>
+            </li>
+        }
+    </ul>
+</section>

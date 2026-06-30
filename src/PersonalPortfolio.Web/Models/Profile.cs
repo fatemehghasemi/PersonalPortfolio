@@ -35,19 +35,24 @@ public static class Profile
     public static readonly TimelineItem[] Timeline =
     [
         new("Nov 2025 — Present", "Back End Developer · Hese Tazegi", "Remote, Tehran",
+            "Scalable .NET Core services with DDD, Dapper, Elasticsearch and Redis.",
             "Designed scalable backend services with .NET Core following DDD. Used Dapper for efficient " +
             "data access, improved Elasticsearch search performance by ~50%, and integrated Redis caching " +
             "to cut response times and database load."),
         new("Sep 2024 — Aug 2025", "Back End Developer · Mores Software", "Remote, Tehran",
+            "High-performance .NET Core backends with CQRS, AWS Lambda and Docker.",
             "Built high-performance backend systems with .NET Core and Dapper. Applied CQRS, integrated " +
             "AWS Lambda and Amazon S3, practiced TDD, and deployed with Docker."),
         new("Jan 2022 — Jan 2024", "Back End Developer · Chargoon", "Remote, Tehran",
+            "Migrated legacy systems to microservices with ASP.NET Core and EF Core.",
             "Migrated legacy systems to scalable microservices on the Zagros platform. Built APIs with " +
             "ASP.NET Core, EF Core and Dapper, and tuned SQL Server performance with indexing and Redis."),
         new("Apr 2018 — Feb 2021", "Back End Developer · Simorgh HR Systems", "On-site, Qom",
+            "APIs and ASP.NET MVC apps for HR automation, with SQL Server tuning.",
             "Built APIs and ASP.NET MVC applications for HR process automation, and optimized SQL Server " +
             "stored procedures and indexing."),
         new("Jan 2017 — Jun 2018", "Software Developer · Mohaymen ICT Group", "On-site, Qom",
+            "Windows Forms apps and backend logic in C# with LINQ.",
             "Developed Windows Forms applications and backend logic in C#, using LINQ and optimized " +
             "stored procedures."),
     ];
@@ -115,7 +120,7 @@ public static class Profile
     ];
 }
 
-public record TimelineItem(string Period, string Title, string Location, string Description);
+public record TimelineItem(string Period, string Title, string Location, string Summary, string Description);
 
 public record EducationItem(string Degree, string Institution, string Period);
 

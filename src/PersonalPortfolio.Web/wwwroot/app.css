@@ -69,6 +69,90 @@ html, body {
     color: var(--bs-emphasis-color);
 }
 
+/* ---------- Experience (Home) ---------- */
+.experience {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--bs-border-color);
+}
+
+.experience-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.experience-more {
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--bs-secondary-color);
+    white-space: nowrap;
+}
+
+.experience-more:hover {
+    color: var(--bs-primary, #0d6efd);
+}
+
+.experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.experience-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.experience-period {
+    flex: 0 0 9.5rem;
+    color: var(--bs-secondary-color);
+    font-size: 0.85rem;
+    padding-top: 0.15rem;
+}
+
+.experience-body {
+    flex: 1;
+}
+
+.experience-role {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.15rem;
+}
+
+.experience-summary {
+    color: var(--bs-secondary-color);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+@media (max-width: 560px) {
+    .experience-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .experience-period {
+        flex-basis: auto;
+        padding-top: 0;
+    }
+}
+
 /* ---------- Generic sections ---------- */
 .page-section {
     margin-bottom: 2.5rem;
