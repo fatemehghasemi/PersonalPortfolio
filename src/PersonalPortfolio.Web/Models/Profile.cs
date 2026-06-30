@@ -32,6 +32,20 @@ public static class Profile
         "Redis", "Elasticsearch", "Docker", "Unit Testing", "Git",
     ];
 
+    // Technologies shown with their brand logo (SVGs live in wwwroot/tech).
+    public static readonly TechItem[] TechStack =
+    [
+        new("C#", "csharp"),
+        new(".NET", "dotnetcore"),
+        new("SQL Server", "sqlserver"),
+        new("PostgreSQL", "postgresql"),
+        new("Redis", "redis"),
+        new("Elasticsearch", "elasticsearch"),
+        new("RabbitMQ", "rabbitmq"),
+        new("Docker", "docker"),
+        new("Git", "git"),
+    ];
+
     public static readonly TimelineItem[] Timeline =
     [
         new("Nov 2025 — Present", "Senior Back End Developer · Hese Tazegi", "Remote, Tehran",
@@ -119,6 +133,8 @@ public static class Profile
             RepoUrl: "https://github.com/fatemehghasemi/Notely"),
     ];
 }
+
+public record TechItem(string Name, string Slug);
 
 public record TimelineItem(string Period, string Title, string Location, string Summary, string Description);
 

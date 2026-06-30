@@ -18,6 +18,16 @@
 </section>
 
 <section class="page-section">
+    <h2 class="section-subtitle">Tech Stack</h2>
+    <div class="tech-stack">
+        @foreach (var tech in Profile.TechStack)
+        {
+            <img class="tech-logo" src="tech/@(tech.Slug).svg" alt="@tech.Name" title="@tech.Name" loading="lazy" width="40" height="40" />
+        }
+    </div>
+</section>
+
+<section class="page-section">
     <h2 class="section-subtitle">Experience</h2>
     <ul class="timeline">
         @foreach (var item in Profile.Timeline)

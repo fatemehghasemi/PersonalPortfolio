@@ -192,6 +192,26 @@ html, body {
     font-size: 0.9rem;
 }
 
+/* ---------- Tech stack (logos) ---------- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.tech-logo {
+    width: 40px;
+    height: 40px;
+    opacity: 0.85;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tech-logo:hover {
+    opacity: 1;
+    transform: scale(1.12);
+}
+
 /* ---------- Timeline ---------- */
 .timeline {
     list-style: none;
@@ -240,6 +260,8 @@ html, body {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid var(--bs-border-color);
     border-radius: 12px;
     padding: 1.25rem;
@@ -299,6 +321,8 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
+    margin-top: auto;
+    padding-top: 0.85rem;
     margin-bottom: 0.85rem;
 }
 
