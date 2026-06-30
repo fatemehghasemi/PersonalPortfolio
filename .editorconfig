@@ -1,0 +1,43 @@
+# EditorConfig is awesome: https://editorconfig.org
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+
+# Code files
+[*.{cs,csx,razor}]
+indent_size = 4
+
+# C# specific
+[*.cs]
+# Prefer file-scoped namespaces
+csharp_style_namespace_declarations = file_scoped:warning
+# 'var' usage
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+# Expression-bodied members
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+# this. preferences
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_property = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_event = false:warning
+# Sort using directives
+dotnet_sort_system_directives_first = true
+
+# Project / config files
+[*.{csproj,props,targets,json,yml,yaml}]
+indent_size = 2
+
+# Markdown
+[*.md]
+trim_trailing_whitespace = false
+
+# Web assets
+[*.{html,css,js}]
+indent_size = 2
