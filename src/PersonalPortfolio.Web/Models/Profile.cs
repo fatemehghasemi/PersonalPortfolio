@@ -32,6 +32,14 @@ public static class Profile
         "Redis", "Elasticsearch", "Docker", "Unit Testing", "Git",
     ];
 
+    // Practices, patterns and libraries shown as tags — the ones without a
+    // brand logo in TechStack, so the Skills section never repeats a name.
+    public static readonly string[] Concepts =
+    [
+        "EF Core", "Dapper ORM", "T-SQL", "RESTful APIs",
+        "DDD", "CQRS", "Microservices", "Unit Testing",
+    ];
+
     // Technologies shown with their brand logo (SVGs live in wwwroot/tech).
     public static readonly TechItem[] TechStack =
     [
