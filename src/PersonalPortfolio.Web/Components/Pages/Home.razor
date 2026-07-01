@@ -2,35 +2,7 @@
 
 <PageTitle>@Profile.Name — @Profile.Title</PageTitle>
 
-<section id="hero" class="hero section-anchor">
-    <p class="hero-eyebrow">Hi, I'm</p>
-    <h1 class="hero-name">@Profile.Name</h1>
-    <h2 class="hero-title">@Profile.Title</h2>
-    <p class="hero-location"><i class="fa-solid fa-location-dot me-1"></i>@Profile.Location</p>
-    <p class="hero-tagline">@Profile.Tagline</p>
-    <p class="hero-intro">@Profile.Intro</p>
-
-    <div class="hero-actions">
-        <a class="btn btn-primary" href="@Profile.ResumePath" target="_blank" rel="noopener">
-            <i class="fa-solid fa-download me-2"></i>Download Resume
-        </a>
-        <a class="btn btn-outline-secondary" href="#projects">
-            View Projects
-        </a>
-    </div>
-
-    <div class="hero-social">
-        <a href="@Profile.GitHubUrl" target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="@Profile.LinkedInUrl" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="mailto:@Profile.Email" aria-label="Email">
-            <i class="fa-solid fa-envelope"></i>
-        </a>
-    </div>
-</section>
+<Hero />
 
 @* Section anchors below are wired for navigation and active-highlight.
    Each section's content is implemented in a later step. *@

@@ -1,0 +1,25 @@
+@* Hero — top section of the single-page site. Reusable, content comes from Profile. *@
+
+<section id="hero" class="hero section-anchor">
+    <p class="hero-eyebrow">Hi, I'm</p>
+    <h1 class="hero-name">@Profile.Name</h1>
+    <h2 class="hero-title">@Profile.Title</h2>
+    <p class="hero-location"><i class="fa-solid fa-location-dot me-1"></i>@Profile.Location</p>
+    <p class="hero-tagline">@Profile.Tagline</p>
+    <p class="hero-intro">@Profile.Intro</p>
+
+    <div class="hero-actions">
+        <a class="btn btn-primary" href="@Profile.ResumePath" target="_blank" rel="noopener">
+            <i class="fa-solid fa-download me-2"></i>Download Resume
+        </a>
+        <a class="btn btn-outline-secondary" href="#projects">
+            View Projects
+        </a>
+        <a class="btn btn-outline-secondary" href="@Profile.GitHubUrl" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-2"></i>GitHub
+        </a>
+        <a class="btn btn-outline-secondary" href="@Profile.LinkedInUrl" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+        </a>
+    </div>
+</section>

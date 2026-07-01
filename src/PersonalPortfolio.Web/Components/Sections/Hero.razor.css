@@ -1,0 +1,54 @@
+.hero {
+    padding: 2rem 0 1rem;
+}
+
+.hero-eyebrow {
+    color: var(--bs-secondary-color);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.hero-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--bs-primary, #0d6efd);
+    margin: 0.25rem 0 0.5rem;
+}
+
+.hero-location {
+    color: var(--bs-secondary-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-tagline {
+    color: var(--bs-secondary-color);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 38rem;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+    .hero-name {
+        font-size: 2.25rem;
+    }
+}
