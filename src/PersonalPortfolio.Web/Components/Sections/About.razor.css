@@ -1,0 +1,13 @@
+.lead-text {
+    margin-bottom: 2.5rem;
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 2rem;
+}
+
+.about-block .section-subtitle {
+    margin-bottom: 1rem;
+}

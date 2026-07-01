@@ -1,0 +1,37 @@
+@* About — professional bio, career summary and education. Content from Profile. *@
+
+<section id="about" class="section-anchor page-section">
+    <h2 class="section-title">About</h2>
+
+    <p class="lead-text">@Profile.AboutText</p>
+
+    <div class="about-details">
+        <div class="about-block">
+            <h3 class="section-subtitle">Education</h3>
+            <ul class="timeline">
+                @foreach (var edu in Profile.Education)
+                {
+                    <li class="timeline-item">
+                        <span class="timeline-period">@edu.Period</span>
+                        <h4 class="timeline-title">@edu.Degree</h4>
+                        <p class="timeline-desc">@edu.Institution</p>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="about-block">
+            <h3 class="section-subtitle">Honors &amp; Awards</h3>
+            <ul class="timeline">
+                @foreach (var award in Profile.Awards)
+                {
+                    <li class="timeline-item">
+                        <span class="timeline-period">@award.Date</span>
+                        <h4 class="timeline-title">@award.Title</h4>
+                        <p class="timeline-desc">@award.Issuer</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
