@@ -1,28 +1,21 @@
-@* Skills — technologies shown as logo cards, plus a tag list for concepts. *@
+@* Skills — technologies grouped by category, shown as clean text tags. *@
 
 <section id="skills" class="section-anchor page-section">
     <h2 class="section-title">Skills</h2>
     <p class="lead-text">Tools and technologies I reach for when building backend systems.</p>
 
-    <div class="skill-grid">
-        @foreach (var tech in Profile.TechStack)
+    <div class="skill-groups">
+        @foreach (var group in Profile.SkillGroups)
         {
-            <div class="skill-card">
-                <img class="skill-card-logo"
-                     src="tech/@(tech.Slug).svg"
-                     alt="@tech.Name"
-                     loading="lazy"
-                     width="40" height="40" />
-                <span class="skill-card-name">@tech.Name</span>
+            <div class="skill-group">
+                <h3 class="skill-group-title">@group.Category</h3>
+                <div class="skill-tags">
+                    @foreach (var item in group.Items)
+                    {
+                        <span class="skill-tag">@item</span>
+                    }
+                </div>
             </div>
-        }
-    </div>
-
-    <h3 class="section-subtitle skill-tags-title">Practices &amp; Patterns</h3>
-    <div class="skill-tags">
-        @foreach (var skill in Profile.Concepts)
-        {
-            <span class="skill-tag">@skill</span>
         }
     </div>
 </section>

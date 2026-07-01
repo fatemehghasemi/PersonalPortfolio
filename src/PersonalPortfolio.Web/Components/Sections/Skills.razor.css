@@ -2,40 +2,31 @@
     margin-bottom: 2rem;
 }
 
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-}
-
-.skill-card {
+.skill-groups {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.85rem 1rem;
-    border: 1px solid var(--bs-border-color);
-    border-radius: 10px;
-    background-color: var(--bs-tertiary-bg);
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.skill-card:hover {
-    border-color: var(--bs-primary, #0d6efd);
-    transform: translateY(-2px);
+.skill-group {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
 }
 
-.skill-card-logo {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
+.skill-group-title {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bs-secondary-color);
 }
 
-.skill-card-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.skill-tags-title {
-    margin-bottom: 1rem;
+@media (max-width: 640px) {
+    .skill-group {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
 }

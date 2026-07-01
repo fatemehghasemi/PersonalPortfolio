@@ -25,33 +25,15 @@ public static class Profile
     public const string LinkedInUrl = "https://www.linkedin.com/in/fatemehghasem1/";
     public const string ResumePath = "files/Fatemeh-Ghasemi-Resume.pdf";
 
-    public static readonly string[] Skills =
+    // Skills grouped by category and shown as plain text tags — the clean,
+    // logo-free treatment used by leerob.com / brittanychiang.com.
+    public static readonly SkillGroup[] SkillGroups =
     [
-        "C#", ".NET Core", "EF Core", "Dapper ORM", "T-SQL",
-        "RESTful APIs", "DDD", "CQRS", "Microservices", "RabbitMQ",
-        "Redis", "Elasticsearch", "Docker", "Unit Testing", "Git",
-    ];
-
-    // Practices, patterns and libraries shown as tags — the ones without a
-    // brand logo in TechStack, so the Skills section never repeats a name.
-    public static readonly string[] Concepts =
-    [
-        "EF Core", "Dapper ORM", "T-SQL", "RESTful APIs",
-        "DDD", "CQRS", "Microservices", "Unit Testing",
-    ];
-
-    // Technologies shown with their brand logo (SVGs live in wwwroot/tech).
-    public static readonly TechItem[] TechStack =
-    [
-        new("C#", "csharp"),
-        new(".NET", "dotnetcore"),
-        new("SQL Server", "sqlserver"),
-        new("PostgreSQL", "postgresql"),
-        new("Redis", "redis"),
-        new("Elasticsearch", "elasticsearch"),
-        new("RabbitMQ", "rabbitmq"),
-        new("Docker", "docker"),
-        new("Git", "git"),
+        new("Languages", ["C#", "T-SQL", "SQL"]),
+        new("Frameworks & Libraries", [".NET Core", "ASP.NET Core", "EF Core", "Dapper ORM"]),
+        new("Data & Messaging", ["SQL Server", "PostgreSQL", "Redis", "Elasticsearch", "RabbitMQ"]),
+        new("DevOps & Tools", ["Docker", "Git"]),
+        new("Patterns & Practices", ["DDD", "CQRS", "Microservices", "RESTful APIs", "Unit Testing"]),
     ];
 
     public static readonly TimelineItem[] Timeline =
@@ -142,7 +124,7 @@ public static class Profile
     ];
 }
 
-public record TechItem(string Name, string Slug);
+public record SkillGroup(string Category, string[] Items);
 
 public record TimelineItem(string Period, string Title, string Location, string Summary, string Description);
 
