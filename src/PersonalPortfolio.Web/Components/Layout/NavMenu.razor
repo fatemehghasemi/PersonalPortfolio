@@ -1,14 +1,25 @@
 @rendermode InteractiveServer
+@implements IAsyncDisposable
 @inject IJSRuntime JS
 
 <nav class="site-nav">
-    <a class="nav-brand" href="">@Profile.Name</a>
+    <a class="nav-brand" href="#hero" @onclick="CloseMenu">@Profile.Name</a>
 
-    <div class="nav-links">
-        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
-        <NavLink class="nav-link" href="about">About</NavLink>
-        <NavLink class="nav-link" href="projects">Projects</NavLink>
-        <NavLink class="nav-link" href="contact">Contact</NavLink>
+    <button class="nav-toggle"
+            @onclick="ToggleMenu"
+            aria-label="Toggle navigation"
+            aria-expanded="@_menuOpen.ToString().ToLowerInvariant()"
+            aria-controls="nav-links">
+        <i class="fa-solid @(_menuOpen ? "fa-xmark" : "fa-bars")"></i>
+    </button>
+
+    <div id="nav-links" class="nav-links @(_menuOpen ? "is-open" : "")">
+        @foreach (var link in _sections)
+        {
+            <a class="nav-link @(_active == link.Id ? "active" : "")"
+               href="#@link.Id"
+               @onclick="CloseMenu">@link.Label</a>
+        }
     </div>
 
     <button class="theme-toggle" @onclick="ToggleTheme" aria-label="Toggle theme" title="Toggle theme">
@@ -17,19 +28,68 @@
 </nav>
 
 @code {
+    private static readonly (string Id, string Label)[] _sections =
+    [
+        ("about", "About"),
+        ("skills", "Skills"),
+        ("projects", "Projects"),
+        ("experience", "Experience"),
+        ("contact", "Contact"),
+    ];
+
     private string _theme = "dark";
+    private bool _menuOpen;
+    private string _active = "";
+
+    private DotNetObjectReference<NavMenu>? _selfRef;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             _theme = await JS.InvokeAsync<string>("portfolioTheme.current");
+            _selfRef = DotNetObjectReference.Create(this);
+            await JS.InvokeVoidAsync("portfolioNav.observe", _selfRef,
+                _sections.Select(s => s.Id).ToArray());
             StateHasChanged();
         }
     }
 
+    [JSInvokable]
+    public void SetActive(string id)
+    {
+        if (_active == id)
+        {
+            return;
+        }
+
+        _active = id;
+        StateHasChanged();
+    }
+
+    private void ToggleMenu() => _menuOpen = !_menuOpen;
+
+    private void CloseMenu() => _menuOpen = false;
+
     private async Task ToggleTheme()
     {
         _theme = await JS.InvokeAsync<string>("portfolioTheme.toggle");
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_selfRef is not null)
+        {
+            try
+            {
+                await JS.InvokeVoidAsync("portfolioNav.dispose");
+            }
+            catch (JSDisconnectedException)
+            {
+                // Circuit already gone — nothing to clean up.
+            }
+
+            _selfRef.Dispose();
+        }
     }
 }

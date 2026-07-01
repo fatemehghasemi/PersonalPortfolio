@@ -2,7 +2,7 @@
 
 <PageTitle>@Profile.Name — @Profile.Title</PageTitle>
 
-<section class="hero">
+<section id="hero" class="hero section-anchor">
     <p class="hero-eyebrow">Hi, I'm</p>
     <h1 class="hero-name">@Profile.Name</h1>
     <h2 class="hero-title">@Profile.Title</h2>
@@ -14,7 +14,7 @@
         <a class="btn btn-primary" href="@Profile.ResumePath" target="_blank" rel="noopener">
             <i class="fa-solid fa-download me-2"></i>Download Resume
         </a>
-        <a class="btn btn-outline-secondary" href="projects">
+        <a class="btn btn-outline-secondary" href="#projects">
             View Projects
         </a>
     </div>
@@ -32,10 +32,57 @@
     </div>
 </section>
 
-<section class="experience">
+@* Section anchors below are wired for navigation and active-highlight.
+   Each section's content is implemented in a later step. *@
+
+<section id="about" class="section-anchor page-section">
+    <h2 class="section-title">About</h2>
+    <p class="lead-text">@Profile.Intro</p>
+</section>
+
+<section id="skills" class="section-anchor page-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skill-tags">
+        @foreach (var skill in Profile.Skills)
+        {
+            <span class="skill-tag">@skill</span>
+        }
+    </div>
+</section>
+
+<section id="projects" class="section-anchor page-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+        @foreach (var project in Profile.Projects)
+        {
+            <article class="project-card">
+                <div class="project-card-head">
+                    <h3 class="project-name">@project.Name</h3>
+                    <span class="project-status status-@project.Status.Replace(" ", "-").ToLowerInvariant()">
+                        @project.Status
+                    </span>
+                </div>
+                <p class="project-desc">@project.Description</p>
+                <div class="project-tech">
+                    @foreach (var tech in project.Tech)
+                    {
+                        <span class="tech-tag">@tech</span>
+                    }
+                </div>
+                @if (project.RepoUrl is not null)
+                {
+                    <a class="project-link" href="@project.RepoUrl" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github me-1"></i>View on GitHub
+                    </a>
+                }
+            </article>
+        }
+    </div>
+</section>
+
+<section id="experience" class="section-anchor experience">
     <div class="experience-head">
         <h2 class="experience-title">Experience</h2>
-        <a class="experience-more" href="about">All experience &amp; details →</a>
     </div>
 
     <ul class="experience-list">
@@ -50,4 +97,23 @@
             </li>
         }
     </ul>
+</section>
+
+<section id="contact" class="section-anchor page-section">
+    <h2 class="section-title">Contact</h2>
+    <p class="lead-text">Feel free to reach out — I'm open to interesting backend and distributed systems work.</p>
+    <div class="contact-list">
+        <a class="contact-item" href="mailto:@Profile.Email">
+            <i class="fa-solid fa-envelope"></i>
+            <span>@Profile.Email</span>
+        </a>
+        <a class="contact-item" href="@Profile.GitHubUrl" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+        </a>
+        <a class="contact-item" href="@Profile.LinkedInUrl" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+    </div>
 </section>

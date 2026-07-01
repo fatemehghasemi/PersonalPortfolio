@@ -22,14 +22,41 @@
 
 .site-footer {
     border-top: 1px solid var(--bs-border-color);
-    text-align: center;
-    padding: 1.5rem;
     color: var(--bs-secondary-color);
     font-size: 0.85rem;
 }
 
-.site-footer p {
+.site-footer-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.site-footer-text {
     margin: 0;
+}
+
+.back-to-top {
+    color: var(--bs-secondary-color);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+}
+
+.back-to-top:hover {
+    color: var(--bs-emphasis-color);
+}
+
+@media (max-width: 560px) {
+    .site-footer-inner {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
 }
 
 #blazor-error-ui {

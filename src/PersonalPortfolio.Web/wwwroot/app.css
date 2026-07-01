@@ -153,6 +153,12 @@ html, body {
     }
 }
 
+/* ---------- Section anchors (single-page nav) ---------- */
+.section-anchor {
+    /* Offset so the sticky header doesn't cover the heading on scroll. */
+    scroll-margin-top: 5rem;
+}
+
 /* ---------- Generic sections ---------- */
 .page-section {
     margin-bottom: 2.5rem;

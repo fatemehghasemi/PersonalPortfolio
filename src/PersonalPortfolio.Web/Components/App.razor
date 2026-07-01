@@ -38,6 +38,38 @@
                 return document.documentElement.getAttribute('data-bs-theme') || 'dark';
             }
         };
+
+        window.portfolioNav = {
+            _observer: null,
+            observe: function (dotNetRef, sectionIds) {
+                this.dispose();
+
+                const targets = sectionIds
+                    .map(id => document.getElementById(id))
+                    .filter(Boolean);
+                if (targets.length === 0) {
+                    return;
+                }
+
+                // Highlight the section whose top is nearest the top of the viewport.
+                this._observer = new IntersectionObserver((entries) => {
+                    const visible = entries
+                        .filter(e => e.isIntersecting)
+                        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+                    if (visible.length > 0) {
+                        dotNetRef.invokeMethodAsync('SetActive', visible[0].target.id);
+                    }
+                }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+                targets.forEach(t => this._observer.observe(t));
+            },
+            dispose: function () {
+                if (this._observer) {
+                    this._observer.disconnect();
+                    this._observer = null;
+                }
+            }
+        };
     </script>
 </body>
 
