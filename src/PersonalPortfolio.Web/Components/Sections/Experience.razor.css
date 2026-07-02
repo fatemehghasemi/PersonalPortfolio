@@ -1,0 +1,51 @@
+.lead-text {
+    margin-bottom: 2rem;
+}
+
+.xp-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.xp-item {
+    position: relative;
+    padding: 0 0 1.75rem 1.75rem;
+    border-left: 2px solid var(--bs-border-color);
+}
+
+.xp-item:last-child {
+    padding-bottom: 0;
+}
+
+.xp-marker {
+    position: absolute;
+    left: -7px;
+    top: 0.3rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--bs-primary, #0d6efd);
+    border: 2px solid var(--bs-body-bg);
+}
+
+.xp-period {
+    display: block;
+    color: var(--bs-secondary-color);
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+
+.xp-role {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+}
+
+.xp-desc {
+    color: var(--bs-secondary-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 44rem;
+}

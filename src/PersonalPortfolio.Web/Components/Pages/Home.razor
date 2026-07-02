@@ -13,24 +13,7 @@
 
 <Projects />
 
-<section id="experience" class="section-anchor experience">
-    <div class="experience-head">
-        <h2 class="experience-title">Experience</h2>
-    </div>
-
-    <ul class="experience-list">
-        @foreach (var item in Profile.Timeline)
-        {
-            <li class="experience-item">
-                <span class="experience-period">@item.Period</span>
-                <div class="experience-body">
-                    <h3 class="experience-role">@item.Title</h3>
-                    <p class="experience-summary">@item.Summary</p>
-                </div>
-            </li>
-        }
-    </ul>
-</section>
+<Experience />
 
 <section id="contact" class="section-anchor page-section">
     <h2 class="section-title">Contact</h2>

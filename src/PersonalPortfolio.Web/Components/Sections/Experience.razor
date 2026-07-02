@@ -1,0 +1,20 @@
+@* Experience — vertical timeline of roles. Data from Profile.Timeline. *@
+
+<section id="experience" class="section-anchor page-section">
+    <h2 class="section-title">Experience</h2>
+    <p class="lead-text">Roles I've held building and scaling backend systems.</p>
+
+    <ol class="xp-timeline">
+        @foreach (var item in Profile.Timeline)
+        {
+            <li class="xp-item">
+                <div class="xp-marker" aria-hidden="true"></div>
+                <div class="xp-content">
+                    <span class="xp-period">@item.Period · @item.Location</span>
+                    <h3 class="xp-role">@item.Title</h3>
+                    <p class="xp-desc">@item.Description</p>
+                </div>
+            </li>
+        }
+    </ol>
+</section>

@@ -30,7 +30,7 @@ public static class Profile
     public static readonly SkillGroup[] SkillGroups =
     [
         new("Languages", ["C#", "T-SQL", "SQL"]),
-        new("Frameworks & Libraries", [".NET Core", "ASP.NET Core", "EF Core", "Dapper ORM"]),
+        new("Frameworks & Libraries", [".NET Core", "ASP.NET Core", "Blazor", "EF Core", "Dapper ORM"]),
         new("Data & Messaging", ["SQL Server", "PostgreSQL", "Redis", "Elasticsearch", "RabbitMQ"]),
         new("DevOps & Tools", ["Docker", "Git"]),
         new("Patterns & Practices", ["DDD", "CQRS", "Microservices", "RESTful APIs", "Unit Testing"]),
