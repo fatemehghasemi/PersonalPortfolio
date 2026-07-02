@@ -132,4 +132,10 @@ public record EducationItem(string Degree, string Institution, string Period);
 
 public record AwardItem(string Title, string Issuer, string Date);
 
-public record ProjectItem(string Name, string Description, string Status, string[] Tech, string? RepoUrl);
+public record ProjectItem(
+    string Name,
+    string Description,
+    string Status,
+    string[] Tech,
+    string? RepoUrl,
+    string? DemoUrl = null);

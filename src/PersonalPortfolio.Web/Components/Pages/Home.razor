@@ -11,35 +11,7 @@
 
 <Skills />
 
-<section id="projects" class="section-anchor page-section">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-grid">
-        @foreach (var project in Profile.Projects)
-        {
-            <article class="project-card">
-                <div class="project-card-head">
-                    <h3 class="project-name">@project.Name</h3>
-                    <span class="project-status status-@project.Status.Replace(" ", "-").ToLowerInvariant()">
-                        @project.Status
-                    </span>
-                </div>
-                <p class="project-desc">@project.Description</p>
-                <div class="project-tech">
-                    @foreach (var tech in project.Tech)
-                    {
-                        <span class="tech-tag">@tech</span>
-                    }
-                </div>
-                @if (project.RepoUrl is not null)
-                {
-                    <a class="project-link" href="@project.RepoUrl" target="_blank" rel="noopener">
-                        <i class="fa-brands fa-github me-1"></i>View on GitHub
-                    </a>
-                }
-            </article>
-        }
-    </div>
-</section>
+<Projects />
 
 <section id="experience" class="section-anchor experience">
     <div class="experience-head">

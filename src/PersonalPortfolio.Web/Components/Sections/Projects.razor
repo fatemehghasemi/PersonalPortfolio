@@ -1,0 +1,13 @@
+@* Projects — grid of project cards. Data from Profile. *@
+
+<section id="projects" class="section-anchor page-section">
+    <h2 class="section-title">Projects</h2>
+    <p class="lead-text">A selection of things I'm building and have shipped.</p>
+
+    <div class="project-grid">
+        @foreach (var project in Profile.Projects)
+        {
+            <ProjectCard Project="project" />
+        }
+    </div>
+</section>
